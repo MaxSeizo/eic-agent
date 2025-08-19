@@ -572,7 +572,8 @@
 		if (backendConfig) {
 			// Save Backend Status to Store
 			await config.set(backendConfig);
-			await WEBUI_NAME.set(backendConfig.name);
+			// Override backend name with our custom branding
+			await WEBUI_NAME.set('EIC Agent');
 
 			if ($config) {
 				await setupSocket($config.features?.enable_websocket ?? true);
